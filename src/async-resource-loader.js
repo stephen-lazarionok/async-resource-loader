@@ -8,10 +8,14 @@ AsyncResourceLoader = {
                 var jsLink = $("<script type='text/javascript'>");
                 jsLink.append(resp.data);
                 $("head").append(jsLink);
-                success();
+                if (success) {
+                    success();
+                }
             },
             error: function () {
-                error();
+                if (error) {
+                    error();
+                }
             }
         });
     },
